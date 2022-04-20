@@ -1,6 +1,8 @@
 //Boton Buscar
 let button= document.getElementById('submit');
 
+let datosGrafico = [];
+
 //URLs para la búsqueda de datos
 const urlPrecios = 'https://api.esios.ree.es/indicators/';
 const url2 = "https://api.esios.ree.es/archives?date=2015-09-15T23:59:59+00:00";
@@ -33,7 +35,7 @@ button.addEventListener('click', function(name){
     {      
       //Imprimimos los datos en consola para comprobar que son cogidos correctamente
       console.log(data.indicator.values[i].datetime.substring(0,10)+" ("+data.indicator.values[i].datetime.substring(11,19)+"): "+data.indicator.values[i].value);
-      
+      datosGrafico.push(data.indicator.values[i].value);
       //Añadimos los datos a la variable body
       body += `<tr><td>${data.indicator.values[i].datetime.substring(11,19)}</td><td>${data.indicator.values[i].value}</td></tr>`;
     }
@@ -54,7 +56,7 @@ button.addEventListener('click', function(name){
         datasets: [
           {
             label: "work load",
-            data: [2,9,3,17,6,3,7,5,6,7,8,9,0,9,8,7,6,5,4,3,2,1,3,4],
+            data: datosGrafico,
             backgroundColor: "rgba(153,205,1,0.6)",
           },
         ],

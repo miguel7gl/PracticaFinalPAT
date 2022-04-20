@@ -45,9 +45,9 @@ button.addEventListener('click', function(name){
 
     //Gráfica
     var ctx = document.getElementById("myChart").getContext("2d");
-
     var m = Math.min.apply(null, datosGrafico);
     console.log(m)
+
     var myChart = new Chart(ctx, {
       type: "line",
       data: {
@@ -57,13 +57,12 @@ button.addEventListener('click', function(name){
                  "21:00","22:00","23:00"],
         datasets: [
           {
-            label: "Precio en €/Mwh",
+            label: "Precio por horas",
             data: datosGrafico,
-            backgroundColor: "rgba(255, 195, 0,0.6)",
+            backgroundColor: "rgba(153,205,1,0.6)",
           },
         ],
-      },
-    
+      },  
     });    
   })
   .catch(err => alert("Error en el acceso a los datos"));

@@ -33,41 +33,41 @@
 
     <div class="container-fluid">
       <div class="row">
-        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+        <nav class="col-md-2 d-none d-md-block  sidebar" >
           <div class="sidebar-sticky">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <a class="nav-link active" href="#">
+                <a class="nav-link active" href="#" style="color:rgb(255, 195, 0)">
                   <span data-feather="home"></span>
                   Dashboard <span class="sr-only">(current)</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="#" style="color:rgb(255, 195, 0)">
                   <span data-feather="file"></span>
                   Orders
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="#" style="color:rgb(255, 195, 0)">
                   <span data-feather="shopping-cart"></span>
                   Products
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="#" style="color:rgb(255, 195, 0)">
                   <span data-feather="users"></span>
                   Customers
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="#" style="color:rgb(255, 195, 0)">
                   <span data-feather="bar-chart-2"></span>
                   Reports
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="#" style="color:rgb(255, 195, 0)">
                   <span data-feather="layers"></span>
                   Integrations
                 </a>
@@ -137,7 +137,7 @@
               <thead>
                 <tr>
                   <th>Hora</th>
-                  <th>PVPC €</th>
+                  <th>PVPC €/Mwh</th>
                   
                 </tr>
               </thead>
@@ -167,37 +167,7 @@
     <!-- Graphs -->
     
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.7.1/dist/Chart.min.js"></script>
-    <!--
-    <script>
-      var ctx = document.getElementById("myChart");
-      var myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-          labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-          datasets: [{
-            data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
-            lineTension: 0,
-            backgroundColor: 'transparent',
-            borderColor: '#007bff',
-            borderWidth: 4,
-            pointBackgroundColor: '#007bff'
-          }]
-        },
-        options: {
-          scales: {
-            yAxes: [{
-              ticks: {
-                beginAtZero: false
-              }
-            }]
-          },
-          legend: {
-            display: false,
-          }
-        }
-      });
-    </script>
-  -->
+
     <script src="Api.js"></script>
   </body>
 </html>

@@ -54,9 +54,9 @@ button.addEventListener('click', function(name){
                  "21:00","22:00","23:00"],
         datasets: [
           {
-            label: "work load",
+            label: "Precio en €/Mwh",
             data: datosGrafico,
-            backgroundColor: "rgba(153,205,1,0.6)",
+            backgroundColor: "rgba(255, 195, 0,0.6)",
           },
         ],
       },

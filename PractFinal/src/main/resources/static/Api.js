@@ -57,24 +57,7 @@ button.addEventListener('click', function(name){
                  "21:00","22:00","23:00"],
         datasets: [
           {
-<<<<<<< HEAD
             label: "Precio en €/Mwh",
-=======
-            label: "Precio por horas",
-            data: datosGrafico,
-            backgroundColor: "rgba(153,205,1,0.6)",
-          },
-        ],
-      },
-      data: {
-        labels: ["00:00","01:00","02:00","03:00","04:00","05:00","06:00",
-                 "07:00","08:00","09:00","10:00","11:00","12:00","13:00",
-                 "14:00","15:00","16:00","17:00","18:00","19:00","20:00",
-                 "21:00","22:00","23:00"],
-        datasets: [
-          {
-            label: "Precio por horas",
->>>>>>> efe51e55a9536d5187c9ef8efaae7ff2083f8015
             data: datosGrafico,
             backgroundColor: "rgba(255, 195, 0,0.6)",
           },

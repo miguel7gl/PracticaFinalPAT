@@ -1,6 +1,7 @@
 //Boton Buscar
 let button= document.getElementById('submit');
 
+let horasGrafico = [];
 let datosGrafico = [];
 
 //URLs para la búsqueda de datos
@@ -37,19 +38,24 @@ button.addEventListener('click', function(name){
       //Añadimos los datos a la variable body
       body += `<tr><td>${data.indicator.values[i].datetime.substring(11,19)}</td><td>${data.indicator.values[i].value}</td></tr>`;
       datosGrafico.push(data.indicator.values[i].value);
+      horasGrafico.push(data.indicator.values[i].datetime.substring(11,19));
     }
 
     //Mostramos la variable body en la página
     document.getElementById('prueba').innerHTML = fecha;
     document.getElementById('datos').innerHTML = body;
 
+    console.log(horasGrafico);
+
     //Gráfica
     var ctx = document.getElementById("myChart").getContext("2d");
     var m = Math.min.apply(null, datosGrafico);
-    console.log(m)
+    var minimoIndex = datosGrafico.indexOf(m);
+    console.log(m);
+    console.log(horasGrafico[minimoIndex]);
+    var horaMinimo = horasGrafico[minimoIndex].substring(0,4)
 
     var myChart = new Chart(ctx, {
-      type: "line",
       data: {
         labels: ["00:00","01:00","02:00","03:00","04:00","05:00","06:00",
                  "07:00","08:00","09:00","10:00","11:00","12:00","13:00",
@@ -57,8 +63,17 @@ button.addEventListener('click', function(name){
                  "21:00","22:00","23:00"],
         datasets: [
           {
+            type: "line",
             label: "Precio por horas",
             data: datosGrafico,
+            backgroundColor: "rgba(255, 195, 0,0.6)",
+          },
+        ],
+        datasets: [
+          {
+            type: "scatter",
+            label: "Mínimo",
+            data: [{x: horaMinimo ,y: m}],
             backgroundColor: "rgba(255, 195, 0,0.6)",
           },
         ],

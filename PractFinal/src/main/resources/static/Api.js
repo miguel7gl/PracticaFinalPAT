@@ -1,8 +1,9 @@
 //Boton Buscar
 let button= document.getElementById('submit');
 
-let horasGrafico = [];
-let datosGrafico = [];
+let horasGrafico = []; //Horas para el grafico
+let datosGrafico = []; //Precios para el grafico
+let colorBarras = []; //Colores para el grafico
 
 //URLs para la búsqueda de datos
 const urlPrecios = 'https://api.esios.ree.es/indicators/';
@@ -18,16 +19,7 @@ button.addEventListener('click', function(name){
   .then(response => response.json())
   .then(data => {
 
-    console.log(typeof data.indicator.values[0].datetime);
-    console.log(data);
-    console.log(data.indicator.id);
-
-    let datos = '';
-    let hora = '';
-    let precio = '';
-
     //Creamos una variable body donde almacenamos los datos
-    let fecha = data.indicator.values[0].datetime.substring(0,10);
     let body = '';
 
     for(i=0; i<data.indicator.values.length; i+=5)
@@ -37,44 +29,56 @@ button.addEventListener('click', function(name){
       
       //Añadimos los datos a la variable body
       body += `<tr><td>${data.indicator.values[i].datetime.substring(11,19)}</td><td>${data.indicator.values[i].value}</td></tr>`;
-      datosGrafico.push(data.indicator.values[i].value);
-      horasGrafico.push(data.indicator.values[i].datetime.substring(11,19));
+      
+      datosGrafico.push(data.indicator.values[i].value); //Array con todos los precios para hacer la grafica
+      horasGrafico.push(data.indicator.values[i].datetime.substring(11,16)); //Array con todas las horas
     }
 
     //Mostramos la variable body en la página
     document.getElementById('prueba').innerHTML = fecha;
     document.getElementById('datos').innerHTML = body;
 
-    console.log(horasGrafico);
-
     //Gráfica
-    var ctx = document.getElementById("myChart").getContext("2d");
-    var m = Math.min.apply(null, datosGrafico);
-    var minimoIndex = datosGrafico.indexOf(m);
-    console.log(m);
-    console.log(horasGrafico[minimoIndex]);
-    var horaMinimo = horasGrafico[minimoIndex].substring(0,4)
+    let ctx = document.getElementById("myChart").getContext("2d");
+    
+    //Obtenemos el dato minimo y su indice
+    let datoMin = Math.min.apply(null, datosGrafico);
+    let indexMin = datosGrafico.indexOf(datoMin);
 
-    var myChart = new Chart(ctx, {
+    //Obtenemos el vlor maximo y su indice
+    let datoMax = Math.max.apply(null, datosGrafico);
+    let indexMax = datosGrafico.indexOf(datoMax);
+
+    //Creamos un array con los colores de las barras:
+    //  - Si coincide con el indice minimo se pone en verde
+    //  - Si coincide con el indice maximo se pone en rojo
+    //  - Si no coincide con ninguno se pone de amarillo
+    for(i=0; i<data.indicator.values.length; i++)
+    {
+      if(i==indexMin)
+      {
+        colorBarras.push("rgba(112, 255, 51,0.6)");
+      }
+      else if(i==indexMax)
+      {
+        colorBarras.push("rgba(255, 87, 51,0.6)");
+      }
+      else
+      {
+        colorBarras.push("rgba(255, 195, 0,0.6)");
+      }
+    }
+
+    //Aqui creamos la grafica
+    let myChart = new Chart(ctx, {
+      type: "bar",
       data: {
-        labels: ["00:00","01:00","02:00","03:00","04:00","05:00","06:00",
-                 "07:00","08:00","09:00","10:00","11:00","12:00","13:00",
-                 "14:00","15:00","16:00","17:00","18:00","19:00","20:00",
-                 "21:00","22:00","23:00"],
+        labels: horasGrafico,
         datasets: [
           {
-            type: "line",
             label: "Precio por horas",
             data: datosGrafico,
-            backgroundColor: "rgba(255, 195, 0,0.6)",
-          },
-        ],
-        datasets: [
-          {
-            type: "scatter",
-            label: "Mínimo",
-            data: [{x: horaMinimo ,y: m}],
-            backgroundColor: "rgba(255, 195, 0,0.6)",
+           backgroundColor: colorBarras
           },
         ],
       },  
@@ -82,3 +86,4 @@ button.addEventListener('click', function(name){
   })
   .catch(err => alert("Error en el acceso a los datos"));
   })
+

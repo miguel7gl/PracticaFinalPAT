@@ -23,6 +23,8 @@ button.addEventListener('click', function(name){
     let hora = '';
     let precio = '';
 
+    let coste = [];
+
     //Creamos una variable body donde almacenamos los datos
     let fecha = data.indicator.values[0].datetime.substring(0,10);
     let body = '';
@@ -39,6 +41,26 @@ button.addEventListener('click', function(name){
     //Mostramos la variable body en la página
     document.getElementById('prueba').innerHTML = fecha;
     document.getElementById('datos').innerHTML = body;
+
+    //Gráfica
+    var ctx = document.getElementById("myChart").getContext("2d");
+    var myChart = new Chart(ctx, {
+      type: "line",
+      data: {
+        labels: ["00:00","01:00","02:00","03:00","04:00","05:00","06:00",
+                 "07:00","08:00","09:00","10:00","11:00","12:00","13:00",
+                 "14:00","15:00","16:00","17:00","18:00","19:00","20:00",
+                 "21:00","22:00","23:00"],
+        datasets: [
+          {
+            label: "work load",
+            data: [2,9,3,17,6,3,7,5,6,7,8,9,0,9,8,7,6,5,4,3,2,1,3,4],
+            backgroundColor: "rgba(153,205,1,0.6)",
+          },
+        ],
+      },
+    
+    });
     
   })
   .catch(err => alert("Error en el acceso a los datos"));

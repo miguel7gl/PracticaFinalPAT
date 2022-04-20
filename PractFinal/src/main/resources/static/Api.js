@@ -59,7 +59,7 @@ button.addEventListener('click', function(name){
           {
             label: "Precio por horas",
             data: datosGrafico,
-            backgroundColor: "rgba(153,205,1,0.6)",
+            backgroundColor: "rgba(255, 195, 0,0.6)",
           },
         ],
       },  

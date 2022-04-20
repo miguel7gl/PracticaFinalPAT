@@ -49,7 +49,7 @@ button.addEventListener('click', function(name){
     console.log(m)
 
     var myChart = new Chart(ctx, {
-      type: "line",
+      type: "bar",
       data: {
         labels: ["00:00","01:00","02:00","03:00","04:00","05:00","06:00",
                  "07:00","08:00","09:00","10:00","11:00","12:00","13:00",
@@ -59,7 +59,31 @@ button.addEventListener('click', function(name){
           {
             label: "Precio por horas",
             data: datosGrafico,
-            backgroundColor: "rgba(255, 195, 0,0.6)",
+           backgroundColor: ["rgba(255, 195, 0,0.6)",
+            "rgba(255, 195, 0,0.6)",
+            "rgba(255, 195, 0,0.6)",
+            "rgba(255, 195, 0,0.6)",
+            "rgba(255, 195, 0,0.6)",
+            "rgba(255, 195, 0,0.6)",
+            "rgba(255, 195, 0,0.6)",
+            "rgba(255, 195, 0,0.6)",
+            "rgba(255, 195, 0,0.6)",
+            "rgba(255, 195, 0,0.6)",
+            "rgba(255, 195, 0,0.6)",
+            "rgba(255, 195, 0,0.6)",
+            "rgba(255, 195, 0,0.6)",
+            "rgba(255, 195, 0,0.6)",
+            "rgba(255, 195, 0,0.6)",
+            "rgba(255, 195, 0,0.6)",
+            "rgba(255, 195, 0,0.6)",
+            "rgba(255, 195, 0,0.6)",
+            "rgba(255, 195, 0,0.6)",
+            "rgba(255, 195, 0,0.6)",
+            "rgba(255, 195, 0,0.6)",
+            "rgba(255, 195, 0,0.6)",
+            "rgba(255, 195, 0,0.6)",
+            "rgba(255, 195, 0,0.6)",]
+            
           },
         ],
       },  
@@ -67,3 +91,4 @@ button.addEventListener('click', function(name){
   })
   .catch(err => alert("Error en el acceso a los datos"));
   })
+

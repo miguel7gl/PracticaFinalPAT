@@ -12,7 +12,7 @@ const url = 'https://api.esios.ree.es/indicators/1001'
 const hdrs = {'Accept':'application/json; application/vnd.esios-api-v2+json','Content-Type':'application/json','Host':'api.esios.ree.es','Authorization':'Token token="67ff456a8376fbbb16a69c06b925535675ccc05b153c04f28219a66013a810c5"'}
 
 //Definimos lo que hace el boton cuando es pulsado
-button.addEventListener('click', function(name){
+button.addEventListener('click', function(){
   fetch(url, {method: "GET", headers: hdrs})
   .then(response => response.json())
   .then(data => {

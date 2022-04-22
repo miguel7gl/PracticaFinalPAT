@@ -2,7 +2,6 @@
 let buttonActual= document.getElementById('submitActual');
 let buttonIntervalo= document.getElementById('submitIntervalo');
 
-
 /*
 //URLs para la búsqueda de datos
 const cors = 'https://cors-anywhere.herokuapp.com/';
@@ -110,6 +109,7 @@ buttonActual.addEventListener('click', function(name){
 
     //Grafica
     let ctx = document.getElementById("myChartDiaActual").getContext("2d");
+    
 
     const graficoEjes = {
       labels: horasGrafico,
@@ -129,6 +129,8 @@ buttonActual.addEventListener('click', function(name){
     };
 
     
+
+    
     //Aqui creamos la grafica
     let myChart = new Chart(ctx, {
       type: "bar",
@@ -145,10 +147,27 @@ buttonActual.addEventListener('click', function(name){
         }
     }  
     }); 
+    
 
   })
   .catch(() => alert("Error en el acceso a los datos"));
   })
+
+  $(document).on("click", "button", function(){
+    $.get("customers.php", function(data){
+        $("body").html(data);
+    });       
+  });
+ 
+  // Add remove loading class on body element based on Ajax request status
+  $(document).on({
+    ajaxStart: function(){
+        $("body").addClass("loading"); 
+    },
+    ajaxStop: function(){ 
+        $("body").removeClass("loading"); 
+    }    
+  });
 
 
   //CUANDO PULSAS EL BOTON DE INTERVALO
@@ -235,8 +254,16 @@ buttonActual.addEventListener('click', function(name){
       }
       
       //Grafica
-      let ctx = document.getElementById("myChartIntervalo").getContext("2d");
 
+      /*
+      var resetCanvas = function(){
+        $('#myChartIntervalo').remove(); // this is my <canvas> element
+        $('#containerGraficaIntervalo').append('<canvas class="my-4" id="myChartIntervalo" width="900" height="380"></canvas>');
+      };
+      */
+
+      let ctx = document.getElementById("myChartIntervalo").getContext("2d");
+      
       const graficoEjes = {
         labels: horasGrafico,
         datasets: [{
@@ -253,8 +280,8 @@ buttonActual.addEventListener('click', function(name){
           borderColor: 'rgb(54, 162, 235)'
         }]
       };
-  
       
+      //Aqui creamos la grafica
       //Aqui creamos la grafica
       let myChart = new Chart(ctx, {
         type: "bar",
@@ -269,8 +296,13 @@ buttonActual.addEventListener('click', function(name){
                   }
               }]
           }
-      }  
-      }); 
+        }  
+      });  
+      
+    
+
+
+      
   
     })
     .catch(() => alert("Error en el acceso a los datos"));

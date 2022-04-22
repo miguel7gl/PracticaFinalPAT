@@ -133,10 +133,14 @@
             <p id="prueba"></p>
           </div>
 
-          <canvas class="my-4" id="myChartIntervalo" width="900" height="380"></canvas>
+          <div id="containerGraficaIntervalo">
+            <canvas class="my-4" id="myChartIntervalo" width="900" height="380"></canvas>
+          </div>
+          
           
           <div class="d-grid gap-2 col-6 mx-auto">
-            <input type="submit" onclick="getValueInput()" value="Buscar intervalo" class="btn btn-secondary" id="submitIntervalo"> 
+            <button type="submit" class="btn btn-secondary" id="submitIntervalo"> Buscar intervalo </button>
+            <button class="btn btn-secondary" onClick="window.location.reload();">Refresh Page</button>
           </div>
 
           <div class="d-grid gap-2 col-6 mx-auto">

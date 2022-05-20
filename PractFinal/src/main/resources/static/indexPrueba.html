@@ -22,15 +22,36 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
-      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Company name</a>
-      <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
-      <ul class="navbar-nav px-3">
-        <li class="nav-item text-nowrap">
-          <a class="nav-link" href="registro.html">Registrarse</a>
-        </li>
-      </ul>
+    <!----------------------------------------------- NAVBAR ----------------------------------------------->
+    <nav class="navbar navbar-expand-xxl bg-light navbar-light fixed-top">
+
+      <div class="container">
+        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+          <!--<a href="index.html" width="8%" height="4%">-->
+          <img class="bi me-2 navbar-brand" width="18%" height="4%" role="img" aria-label="Bootstrap" src="./libs/Imagenes/logoCalculoSuministros.jpg">
+
+          <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#toggleMobileMenu" aria-controls="toggleMobileMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="navbar-collapse collapse" id="toggleMobileMenu">
+            <ul class="nav col-12 col-md-9 mb-2 justify-content-center mb-md-0">
+              <li><a href="inicio.html" class="nav-link px-2 link-secondary">Inicio &nbsp;|</a></li>
+              <li><a href="sobre-nosotros.html" class="nav-link px-2 link-dark">Sobre Nosotros &nbsp;|</a></li>
+              <li><a href="index.html" class="nav-link px-2 link-dark">Calculadora de suministros &nbsp;</a></li>
+            </ul>
+      
+            <div class="nav col-12 col-md-3 text-end">
+              <button type="button" class="btn btn-outline-primary me-2" onclick="alert('¡Debe registrarse primero!')">Iniciar sesión</button>
+              <a href="registro.html"><button type="button" class="btn btn-outline-primary">Registrarse</button></a>
+              
+            </div>
+          </div>
+        </header>
+      </div>
     </nav>
+
+    <br><br><br><br><br>
 
     <div class="container-fluid">
       <div class="row">

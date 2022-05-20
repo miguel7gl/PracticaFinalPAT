@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Electro-Casa</title>
+    <title>Electro-Casa - Intervalo de precios</title>
+    <link rel="shortcut icon" href="./libs/Imagenes/logoLuz.jpg">
 
     <!-- HOJA DE ESTILOS NUESTRA -->
     <link rel="stylesheet" href="style2.css">
@@ -29,68 +30,47 @@
     <div class="wrapper">
       <!-- Sidebar  -->
       <nav id="sidebar">
-          <div class="sidebar-header">
-              <h3>Electro-Casa</h3>
-              <strong>EC</strong>
-          </div>
+        <div class="sidebar-header">
+            <h3>Electro-Casa</h3>
+            <strong>EC</strong>
+        </div>
 
-          <ul class="list-unstyled components">
-              <li>
-                <a href="#">
-                  <i class="fas fa-home"></i>
-                  Inicio
+        <ul class="list-unstyled components">
+            <li>
+              <a href="inicio.html">
+                <i class="fas fa-home"></i>
+                Inicio
+              </a>
+            </li>
+            <li>
+              <a href="#conocenosSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                <i class="fas fa-copy"></i>
+                Conócenos
+              </a>
+              <ul class="collapse list-unstyled" id="conocenosSubmenu">
+                  <li>
+                      <a href="sobreNosotros.html">Sobre nosotros</a>
+                  </li>
+              </ul>
+                <a href="#consultaSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <i class="fas fa-copy"></i>
+                    Consulta de datos
                 </a>
-              </li>
-              <li>
-                <a href="#conocenosSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                  <i class="fas fa-copy"></i>
-                  Conócenos
-                </a>
-                <ul class="collapse list-unstyled" id="conocenosSubmenu">
-                    <li>
-                        <a href="#">Sobre nosotros</a>
-                    </li>
-                    <li>
-                        <a href="#">Visión, misión y valores</a>
-                    </li>
-                </ul>
-                  <a href="#consultaSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                      <i class="fas fa-copy"></i>
-                      Consulta de datos
-                  </a>
-                  <ul class="collapse list-unstyled" id="consultaSubmenu">
+                <ul class="collapse list-unstyled" id="consultaSubmenu">
+                  <li class="active">
                     <a href="precioDia.html">
                       <i class="fas fa-image"></i>
                       PVPC Diario
                     </a>
-                    <li class="active">
-                      <a href="precioIntervalo.html">
-                        <i class="fas fa-image"></i>
-                        PVPC varios días
-                      </a>
-                    </li>
-                  </ul>
-              </li>
-              <li>
-                  <a href="#">
-                      <i class="fas fa-image"></i>
-                      Portfolio
+                  </li>
+                  <a href="precioIntervalo.html">
+                    <i class="fas fa-image"></i>
+                    PVPC varios días
                   </a>
-              </li>
-              <li>
-                  <a href="#">
-                      <i class="fas fa-question"></i>
-                      FAQ
-                  </a>
-              </li>
-              <li>
-                  <a href="#">
-                      <i class="fas fa-paper-plane"></i>
-                      Contacto
-                  </a>
-              </li>
-          </ul>
-      </nav>
+                </ul>
+            </li>
+        </ul>
+    </nav>
 
       <!-- Page Content  -->
       <div id="content">
@@ -113,7 +93,7 @@
                           <button class="btn btn-outline-warning" type="submit">Buscar</button>
                         </form>
                           <li class="nav-item">
-                            <button class="btn btn-outline-warning top-navbar" href="#">Registrarse</button>
+                            <button class="btn btn-outline-warning top-navbar" href="registro.html">Registrarse</button>
                           </li>
                           <li class="nav-item">
                             <button class="btn btn-outline-warning top-navbar" href="#">Iniciar sesión</button>
@@ -165,6 +145,27 @@
       </div>
     </div>
 
+    <!----------------------------------------------- FOOTER ----------------------------------------------->
+    <div class="container">
+      <footer class="py-3 my-4">
+          <ul class="nav justify-content-center pb-3 mb-3">
+          <li class="nav-item"><a href="inicio.html" class="nav-link px-2 text-muted">Inicio</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Sobre nosotros</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Electro-Casa</a></li>
+          <!--<li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Innovación</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Prensa</a></li>-->
+          </ul>
+
+          <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+          <li class="ms-3"><a class="text-muted" href="https://twitter.com/ferrovial_es"><img class="bi" src="./libs/Imagenes/twitter.png" width="50" height="50"></use></img></a></li>
+          <li class="ms-3"><a class="text-muted" href="https://www.linkedin.com/company/ferrovial/"><img class="bi" src="./libs/Imagenes/linkedin.png" width="45" height="45"></use></img></a></li>
+          <li class="ms-3"><a class="text-muted" href="https://www.facebook.com/ferrovial"><img class="bi" src="./libs/Imagenes/facebook.png" width="50" height="50"></img></a></li>
+          </ul>
+          
+          <p class="text-center text-muted">© Copyright 2022, Cálculo suministros</p>
+      </footer>
+    </div> 
+
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -183,7 +184,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.7.1/dist/Chart.min.js"></script>
   
     <!--Scripts nuestros-->
-    <script src="ApiPrecioIntervalo.js"></script>
+    <script src="./libs/js/ApiPrecioIntervalo.js"></script>
 
     <!-- jQuery CDN - Slim version (=without AJAX) -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

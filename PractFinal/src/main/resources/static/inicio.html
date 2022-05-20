@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"> <!--codificación de caracteres-->
-    <title></title>
+    <title>Cálculo suministros</title>
     <link rel="shortcut icon" href="./libs/Imagenes/logoLuz.jpg">
     <meta name = "Description" content ="Página de inicio para el proyecto">
     <link rel="stylesheet" href="./libs/css/styles.css"/> <!--vinculamos css de bootstrap-->
@@ -16,7 +16,7 @@
       <div class="container">
         <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
           <!--<a href="index.html" width="8%" height="4%">-->
-          <img class="bi me-2 navbar-brand" width="18%" height="4%" role="img" aria-label="Bootstrap" src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Ferrovial_Logo.svg">
+          <img class="bi me-2 navbar-brand" width="18%" height="4%" role="img" aria-label="Bootstrap" src="./libs/Imagenes/logoCalculoSuministros.jpg">
 
           <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#toggleMobileMenu" aria-controls="toggleMobileMenu" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -26,7 +26,7 @@
             <ul class="nav col-12 col-md-9 mb-2 justify-content-center mb-md-0">
               <li><a href="inicio.html" class="nav-link px-2 link-secondary">Inicio &nbsp;|</a></li>
               <li><a href="sobre-nosotros.html" class="nav-link px-2 link-dark">Sobre Nosotros &nbsp;|</a></li>
-              <li><a href="index.html" class="nav-link px-2 link-dark">Calculadora de suministros &nbsp;</a></li>
+              <li><a href="precioDia.html" class="nav-link px-2 link-dark">Electro-Casa &nbsp;</a></li>
             </ul>
       
             <div class="nav col-12 col-md-3 text-end">
@@ -40,41 +40,114 @@
     </nav>
 
     <hr class="featurette-divider">
+    <br><br><br><br><br>
 
-    <!----------------------------------------------- CARD ACCIONISTAS ----------------------------------------------->
+    <!----------------------------------------------- CARD DESCRIPCIÓN DE LA EMPRESA ----------------------------------------------->
     <div class="card bg-dark text-white">
       <video autoplay muted loop id="myVideo" width="100%" height="100%">
-        <source src="./libs/Imagenes/vídeoInicio.mp4" type="video/mp4">
+        <source src="./libs/Imagenes/vídeoAguaFuente.mp4" type="video/mp4">
       </video>
       <div class="card-img-overlay">
-        <h1 class="card-title display-5">Nuestra empresa: NOMBRE DE EMPRESA</h1>
-        <h3>DESCRIPCIÓN DE LA EMPRESA</h3>
+        <h1 class="card-title display-4">Nuestra empresa: Cálculo Suministros</h1>
+        <br>
+        <h3 class="display-6">En 2022 dio comienzo nuestra andadura</h3>
       </div>
     </div>
 
     <div class="container marketing">
-      <br>
 
-      <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
+      <hr class="featurette-divider">
+
+      <!----------------------------------------------- CARD DE NOTICIAS ----------------------------------------------->
+      <h2 class="display-5">Noticias detacadas del mes</h2>
+      <br>
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="col">
+          <a href="https://www.eleconomista.es/retail-consumo/noticias/11769411/05/22/La-inflacion-golpea-a-las-grandes-superficies-piden-bajar-impuestos.html" class="nav-link px-2 link-dark"><div class="card">
+            <img src="./libs/Imagenes/noticiaInflacion.jpg" class="card-img-top" alt="ImagenInflacion">
+            <div class="card-body">
+              <h5 class="card-title">La inflación golpea a las grandes superficies: piden bajar impuestos</h5>
+              <p class="card-text">Las ventas cayeron un 1,3% en el mes de marzo y el sector reclama medidas.</p>
+              <p class="card-text">El consumo se vuelve a parar y la escalada de la inflación pasa ya factura a las grandes superficies. 
+              De acuerdo con los últimos datos del Instituto Nacional de Estadística (INE), las ventas de este tipo 
+              de establecimientos han vuelto a terreno negativo, registrando una caída en marzo del 1,3% respecto al 
+              mismo mes del año anterior, una vez descontados los efectos del calendario, según los datos del INE. 
+              El dato es especialmente significativo porque se produce después de que en enero las ventas de las 
+              grandes superficies hubieran crecido en tasa interanual un 11,2%% y en febrero aumentaran un 8,7%.</p>
+            </div>
+          </div></a>
+        </div>
+
+        <div class="col">
+          <a href="https://www.infobae.com/economia/2022/05/19/tarifas-los-aumentos-que-se-vienen-y-a-partir-de-cuando-se-van-a-aplicar/" class="nav-link px-2 link-dark"><div class="card">
+            <img src="./libs/Imagenes/imagenTarifas.webp" class="card-img-top" alt="ImagenTarifas">
+            <div class="card-body">
+              <h5 class="card-title">Tarifas: los aumentos que se vienen y a partir de cuándo se van a aplicar</h5>
+              <p class="card-text">Ya se realizaron las audiencias por las subas en electricidad y gas. 
+                Este jueves será el turno de la audiencia por los incrementos en el servicio de agua</p>
+              <p class="card-text">La semana pasada se realizaron las audiencias públicas para la suba 
+                de tarifas de gas y electricidad, el paso precio para implementar nuevos cuadros tarifarios. 
+                Aunque aun no hay una fecha definida, se espera que las nuevas trifas sean oficializadas en 
+                los próximos días. Luego, este jueves será el turno de las audiencia pública por los precios 
+                del servicio de agua. ¿Cuáles son las subas que se vienen y a partir de cuándo se van a aplicar?</p>
+            </div>
+          </div></a>
+        </div>
+        
+        <div class="col">
+          <a href="https://www.europapress.es/economia/energia-00341/noticia-precio-luz-dispara-alcanza-maximo-historico-lunes-44254-euros-mwh-20220306130605.html" class="nav-link px-2 link-dark"><div class="card">
+            <img src="./libs/Imagenes/precioHistórico.jpg" class="card-img-top" alt="ImagenPrecioHistórico">
+            <div class="card-body">
+              <h5 class="card-title">El precio de la luz se dispara y alcanza su máximo histórico este lunes, con 544,54 euros/MWh</h5>
+              <p class="card-text">El precio medio de la electricidad en el mercado mayorista subirá este lunes un 16,76% y marcará 
+                su registro más caro de la historia, una media de 442 euros/MWh, al calor del alza en el precio del gas natural por el 
+                impacto de la guerra en Ucrania.
+                En concreto, el precio medio del 'pool' para este lunes será de 544,54 euros/MWh, con lo que superará el anterior 
+                máximo histórico de 383,67 euros/MWh que se alcanzó el pasado 23 de diciembre.
+                Además, el precio de este lunes es unos 63 euros más caro que el marcado el domingo, de 379,03 euros/MWh, 
+                según datos publicados por el Operador del Mercado Ibérico de Energía (OMIE) recogidos por Europa Press
+              </p>
+            </div>
+          </div></a>
+        </div>
+
+        <div class="col">
+          <a href="https://www.economiadigital.es/economia/rechazo-historico-electricas.html" class="nav-link px-2 link-dark"><div class="card">
+            <img src="./libs/Imagenes/imagenEnfadoHistorico.webp" class="card-img-top" alt="ImagenEnfadoHistórico">
+            <div class="card-body">
+              <h5 class="card-title">Enfado histórico con las eléctricas: los precios hacen estallar a los clientes</h5>
+              <p class="card-text">Nunca había tantos clientes enfadados con su compañía eléctrica, y el precio tiene la culpa de todo</p>
+              <p class="card-text">«Las lavadoras hay que ponerlas por la noche». Ha pasado casi un año desde que el Gobierno impulsó 
+                la tarifa discriminada por tramos horarios y con distintos precios, que entró en vigor el 1 de junio de 2021, y con ello 
+                ese pequeño caos que asoló a los más de 10 millones de clientes acogidos a la tarifa regulada (PVPC). Pero todo se vino 
+                al traste. El conflicto de Ucrania empezó a asomar; los precios se dispararon; el invierno dio continuidad a las subidas; 
+                y la invasión del ejército ruso terminó de reventar el sistema. Todo eso ha llevado a los clientes eléctricos a un rechazo 
+                hacia sus compañías de una manera inédita hasta ahora.</p>
+            </div>
+          </div></a>
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <!----------------------------------------------- CARD CALCULADORA DE AGUA ----------------------------------------------->
+      <a href="indexPrueba.html" class="nav-link px-2 link-dark"><div class="card bg-dark text-white">
+        <img src="./libs/Imagenes/cardCalculadoraAgua3.jpg" class="card-img" alt="ImagenAgua">
+        <div class="card-img-overlay card-menor-tamano">
+          <h1 class="card-title display-1">Calculadora de precios del suministro de agua</h1>
+          <p class="card-text">Accede aquí para conocer toda la información de los diferentes precios del día</p>
+        </div>
+      </div></a>
+
     </div>
 
-
-
-
-
-    <<div class="container">
+    <!----------------------------------------------- FOOTER ----------------------------------------------->
+    <div class="container">
       <footer class="py-3 my-4">
           <ul class="nav justify-content-center pb-3 mb-3">
-          <li class="nav-item"><a href="indexPrueba.html" class="nav-link px-2 text-muted">Inicio</a></li>
-          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">PONER ALGO</a></li>
-          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">PONER ALGO</a></li>
+          <li class="nav-item"><a href="inicio.html" class="nav-link px-2 text-muted">Inicio</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Sobre nosotros</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Electro-Casa</a></li>
           <!--<li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Innovación</a></li>
           <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Prensa</a></li>-->
           </ul>
@@ -85,7 +158,7 @@
           <li class="ms-3"><a class="text-muted" href="https://www.facebook.com/ferrovial"><img class="bi" src="./libs/Imagenes/facebook.png" width="50" height="50"></img></a></li>
           </ul>
           
-          <p class="text-center text-muted">© Copyright 2022, Cálculo de suministros</p>
+          <p class="text-center text-muted">© Copyright 2022, Cálculo suministros</p>
       </footer>
     </div> 
       

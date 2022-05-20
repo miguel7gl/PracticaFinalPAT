@@ -4,11 +4,14 @@ package com.Spring.PractFinal.controller;
 import com.Spring.PractFinal.join.CustomerElectroJoin;
 import com.Spring.PractFinal.model.CustomerModel;
 import com.Spring.PractFinal.service.CustomerService;
+
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jdbc.repository.query.Modifying;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -37,7 +40,8 @@ public ResponseEntity<Iterable<CustomerElectroJoin>> getJoin() {
   return ResponseEntity.ok().body(orders);
 }
 
-@Modifying
+
+
 @PostMapping(path="/customers")
 public ResponseEntity<CustomerModel> create(@RequestBody CustomerModel usuario){
 
@@ -57,6 +61,11 @@ public ResponseEntity<CustomerModel> update(@RequestBody CustomerModel usuario){
 public String delete(@RequestBody CustomerModel usuario){
   String result=customerService.deleteCustomer(usuario);
   return result;
+}
+//-------------------------AUTH--------------------------------------------------------------------------------//
+@GetMapping("/datos")// en / datos se van a mostrar los datos de inicio de sesion del usuario
+public ResponseEntity<Authentication> helloWorld(Authentication authentication) {
+  return new ResponseEntity<>(authentication, HttpStatus.OK);
 }
 
 }

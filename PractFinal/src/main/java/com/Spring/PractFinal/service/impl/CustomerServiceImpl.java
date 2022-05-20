@@ -66,6 +66,8 @@ public class CustomerServiceImpl implements CustomerService{
     }
   }
 
+
+
   @Override
   public UserDetails loadUserByUsername(String customerName) throws UsernameNotFoundException {
     CustomerModel customer= repository.findByCustomerName(customerName);

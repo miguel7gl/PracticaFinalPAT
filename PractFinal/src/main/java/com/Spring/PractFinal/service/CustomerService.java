@@ -18,4 +18,6 @@ public interface CustomerService extends UserDetailsService {
   CustomerModel updateCustomer(CustomerModel customer);
 
   String deleteCustomer(CustomerModel customer);
+
+
 }

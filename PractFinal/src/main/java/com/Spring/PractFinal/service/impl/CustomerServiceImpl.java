@@ -4,9 +4,15 @@ import com.Spring.PractFinal.service.CustomerService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.Spring.PractFinal.join.CustomerElectroJoin;
 import com.Spring.PractFinal.model.CustomerModel;
@@ -58,5 +64,15 @@ public class CustomerServiceImpl implements CustomerService{
     }else{
       return "No existe el usuario a borrar";
     }
+  }
+
+  @Override
+  public UserDetails loadUserByUsername(String customerName) throws UsernameNotFoundException {
+    CustomerModel customer= repository.findByCustomerName(customerName);
+   
+    List<GrantedAuthority> authorities= new ArrayList<>();
+    UserDetails customerNuevo=new User(customer.getCustomerName(),customer.getPassword(),authorities);
+    return customerNuevo;
+
   }
 }

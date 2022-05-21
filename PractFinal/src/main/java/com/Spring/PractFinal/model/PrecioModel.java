@@ -14,8 +14,27 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Table("PRECIOS")
 public class PrecioModel {
-  private @Column("ELECTRO_TIPO") String electroTipo;
+  	private @Column("ELECTRO_TIPO") String electroTipo;
 	private @Column("CONSUMO_MEDIO_HORA") Float consumo;
 	private @Column("PRECIO_CONSUMO") Float precioConsumo;
+
+	public String getElectroTipo() {
+		return electroTipo;
+	}
+	public void setElectroTipo(String electroTipo) {
+		this.electroTipo = electroTipo;
+	}
+	public Float getConsumo() {
+		return consumo;
+	}
+	public void setConsumo(Float consumo) {
+		this.consumo = consumo;
+	}
+	public Float getPrecioConsumo() {
+		return precioConsumo;
+	}
+	public void setPrecioConsumo(Float precioConsumo) {
+		this.precioConsumo = precioConsumo;
+	}
   
 }

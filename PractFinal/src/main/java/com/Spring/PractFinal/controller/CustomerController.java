@@ -28,36 +28,36 @@ public class CustomerController {
 
     var orders = customerService.getAllCustomers();
     return ResponseEntity.ok().body(orders);
-}
+  }
 
-@GetMapping(path="/ElectroJoin",produces=MediaType.APPLICATION_JSON_VALUE)
-public ResponseEntity<Iterable<CustomerElectroJoin>> getJoin() {
+  @GetMapping(path="/customerElectroJoin",produces=MediaType.APPLICATION_JSON_VALUE)
+  public ResponseEntity<Iterable<CustomerElectroJoin>> getJoin() {
 
-  var orders = customerService.getJoin();
-  return ResponseEntity.ok().body(orders);
-}
+    var orders = customerService.getJoin();
+    return ResponseEntity.ok().body(orders);
+  }
 
-@Modifying
-@PostMapping(path="/customers")
-public ResponseEntity<CustomerModel> create(@RequestBody CustomerModel usuario){
+  @Modifying
+  @PostMapping(path="/customers")
+  public ResponseEntity<CustomerModel> create(@RequestBody CustomerModel usuario){
 
-  CustomerModel customer=customerService.postCustomer(usuario);
-  return ResponseEntity.ok().body(customer);
-}
+    CustomerModel customer=customerService.postCustomer(usuario);
+    return ResponseEntity.ok().body(customer);
+  }
 
-@Modifying
-@PutMapping(path="/customers")
-public ResponseEntity<CustomerModel> update(@RequestBody CustomerModel usuario){
+  @Modifying
+  @PutMapping(path="/customers")
+  public ResponseEntity<CustomerModel> update(@RequestBody CustomerModel usuario){
 
-  CustomerModel customer=customerService.updateCustomer(usuario);
-  return ResponseEntity.ok().body(customer);
-}
-@Modifying
-@DeleteMapping(path="/customers")
-public String delete(@RequestBody CustomerModel usuario){
-  String result=customerService.deleteCustomer(usuario);
-  return result;
-}
+    CustomerModel customer=customerService.updateCustomer(usuario);
+    return ResponseEntity.ok().body(customer);
+  }
+  @Modifying
+  @DeleteMapping(path="/customers")
+  public String delete(@RequestBody CustomerModel usuario){
+    String result=customerService.deleteCustomer(usuario);
+    return result;
+  }
 
 }
 

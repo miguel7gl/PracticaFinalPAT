@@ -7,7 +7,6 @@ import org.springframework.http.MediaType;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,7 +23,6 @@ public class ElectroController {
         return ResponseEntity.ok().body(result);
     }
 
-    @CrossOrigin(origins = "*")
     @GetMapping(path="/electroPrecioJoin",produces=MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Iterable<ElectroPrecioJoin>> getJoin() {
 

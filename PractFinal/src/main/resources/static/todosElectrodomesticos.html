@@ -66,7 +66,7 @@
                     <i class="fas fa-image"></i>
                     PVPC varios días
                   </a>
-                  <a href="todosElectrodomesticos.html">
+                  <a href="precioIntervalo.html">
                     <i class="fas fa-image"></i>
                     Consultar todos los electrodomésticos
                   </a>
@@ -113,29 +113,26 @@
               </div>
           </nav>
 
-          <h2>Obtener precio de un día determinado por horas</h2>
+          <h2>Obtener todos los electrodomésticos</h2>
           <br>
           <div class="d-grid gap-2 col-6 mx-auto botonesGrafica">
-            <input type="submit" value="Buscar día actual" class="btn btn-secondary" id="submitActual">
-            
-          </div>
-          <p id="prueba" style="text-align: center;"></p>
-          <div class="chart-container" style="position: relative; height:33%; width:98%">
-            <canvas class="my-4" id="myChartDiaActual" width="900" height="380"></canvas>
+            <input type="submit" value="Buscar" class="btn btn-secondary" id="submitActual" onclick="getTodosElectrodomesticos()">
           </div>
 
           <div class="line"></div>
 
           <h3>Tabla de datos</h3>
 
-          <p id="fecha"></p>
           <div class="table-responsive tablaDatos">
             <table class="table table-striped table-sm table-fixed" id="tabla">
               <thead>
                 <tr>
-                  <th>Hora</th>
-                  <th>PVPC €/MWh</th>
-                  <th>PVPC c€/kWh</th>
+                  <th>Id del electrodoméstico</th>
+                  <th>Tipo</th>
+                  <th>Id del usuario</th>
+                  <th>Tiempo de uso [hrs]</th>
+                  <th>Consumo [kWh]</th>
+                  <th>Precio [c€/kWh]</th>
                 </tr>
               </thead>
               <tbody id="datos">
@@ -184,11 +181,10 @@
       feather.replace()
     </script>
 
-    <!-- Graficos -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.7.1/dist/Chart.min.js"></script>
-  
     <!-- Scripts nuestros -->
-    <script src="./libs/js/ApiPrecioDia.js"></script>
+    <script src="./libs/js/ApiTodosElectrodomesticos.js"></script>
+    <script src="./libs/js/bootstrap.js"></script>
+    <script src="./libs/js/jquery.js"></script>
 
     <!-- jQuery CDN - Slim version (=without AJAX) -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

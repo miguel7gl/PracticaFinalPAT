@@ -63,8 +63,6 @@ public class CustomerServiceImpl implements CustomerService{
       return resultado;
   }
 
-
-
   @Override 
   public CustomerModel postCustomer(CustomerModel customer){ //METODO PARA EL POST
      return repository.save(customer);

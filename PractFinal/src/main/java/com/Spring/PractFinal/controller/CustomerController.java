@@ -1,6 +1,7 @@
 package com.Spring.PractFinal.controller;
 
 
+import com.Spring.PractFinal.join.CustomerDomicilioJoin;
 import com.Spring.PractFinal.join.CustomerElectroJoin;
 import com.Spring.PractFinal.model.CustomerModel;
 import com.Spring.PractFinal.service.CustomerService;
@@ -34,13 +35,18 @@ public class CustomerController {
 }
 
 @GetMapping(path="/ElectroJoin",produces=MediaType.APPLICATION_JSON_VALUE)
-public ResponseEntity<Iterable<CustomerElectroJoin>> getJoin() {
+public ResponseEntity<Iterable<CustomerElectroJoin>> getCustomerElectroJoin() {
 
-  var orders = customerService.getJoin();
+  var orders = customerService.getCustomerElectroJoin();
   return ResponseEntity.ok().body(orders);
 }
 
+@GetMapping(path="/DomicilioJoin",produces=MediaType.APPLICATION_JSON_VALUE)
+public ResponseEntity<Iterable<CustomerDomicilioJoin>> getCustomerDomicilioJoin() {
 
+  var orders = customerService.getCustomerDomicilioJoin();
+  return ResponseEntity.ok().body(orders);
+}
 
 @PostMapping(path="/customers")
 public ResponseEntity<CustomerModel> create(@RequestBody CustomerModel usuario){

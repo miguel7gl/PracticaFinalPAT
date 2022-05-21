@@ -14,6 +14,7 @@ import java.util.Optional;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.Spring.PractFinal.join.CustomerDomicilioJoin;
 import com.Spring.PractFinal.join.CustomerElectroJoin;
 import com.Spring.PractFinal.model.CustomerModel;
 import com.Spring.PractFinal.repository.CustomerRepository;
@@ -33,7 +34,7 @@ public class CustomerServiceImpl implements CustomerService{
   }
 
   @Override//METODO PARA EL GET INNER JOIN
-  public  Iterable<CustomerElectroJoin> getJoin(){
+  public  Iterable<CustomerElectroJoin> getCustomerElectroJoin(){
       String query="""
         SELECT CUSTOMERS.CUSTOMER_ID,CUSTOMERS.CUSTOMER_NAME,CUSTOMERS.CONTRASENA,ELECTRODOMESTICOS.ELECTRO_ID,ELECTRODOMESTICOS.ELECTRO_TIPO,ELECTRODOMESTICOS.TIEMPO_USO  
         FROM CUSTOMERS
@@ -46,6 +47,23 @@ public class CustomerServiceImpl implements CustomerService{
       );
       return resultado;
   }
+
+  @Override//METODO PARA EL GET INNER JOIN
+  public  Iterable<CustomerDomicilioJoin> getCustomerDomicilioJoin(){
+      String query="""
+        SELECT CUSTOMERS.CUSTOMER_ID,CUSTOMERS.CUSTOMER_NAME,DOMICILIOS.CALLE,DOMICILIOS.NUM_PISO,DOMICILIOS.PROVINCIA,DOMICILIOS.CIUDAD,DOMICILIOS.CODIGO_POSTAL,DOMICILIOS.PAIS
+        FROM CUSTOMERS
+        INNER JOIN DOMICILIOS
+        ON CUSTOMERS.CUSTOMER_ID=DOMICILIOS.CUSTOMER_ID
+        """;
+      Iterable<CustomerDomicilioJoin> resultado=template.query(query,
+      (rs, rowNum) ->
+      new CustomerDomicilioJoin(rs.getLong("CUSTOMER_ID"), rs.getString("CUSTOMER_NAME"), rs.getString("CALLE"), rs.getString("NUM_PISO"), rs.getString("PROVINCIA"), rs.getInt("CODIGO_POSTAL"),rs.getString("PAIS")) 
+      );
+      return resultado;
+  }
+
+
 
   @Override 
   public CustomerModel postCustomer(CustomerModel customer){ //METODO PARA EL POST
@@ -65,6 +83,7 @@ public class CustomerServiceImpl implements CustomerService{
       return "No existe el usuario a borrar";
     }
   }
+
 
 
 

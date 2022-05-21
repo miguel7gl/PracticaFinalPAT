@@ -69,7 +69,7 @@ public String delete(@RequestBody CustomerModel usuario){
   return result;
 }
 //-------------------------AUTH--------------------------------------------------------------------------------//
-@GetMapping("/datos")// en / datos se van a mostrar los datos de inicio de sesion del usuario
+@GetMapping("/datos")// en /datos se van a mostrar los datos de inicio de sesion del usuario
 public ResponseEntity<Authentication> helloWorld(Authentication authentication) {
   return new ResponseEntity<>(authentication, HttpStatus.OK);
 }

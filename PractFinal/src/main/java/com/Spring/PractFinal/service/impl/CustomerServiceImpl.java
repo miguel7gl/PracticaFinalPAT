@@ -75,6 +75,6 @@ public class CustomerServiceImpl implements CustomerService{
     List<GrantedAuthority> authorities= new ArrayList<>();
     UserDetails customerNuevo=new User(customer.getCustomerName(),customer.getPassword(),authorities);
     return customerNuevo;
-
   }
+
 }

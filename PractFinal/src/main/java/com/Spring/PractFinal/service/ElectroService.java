@@ -6,5 +6,5 @@ import com.Spring.PractFinal.model.ElectroModel;
 public interface ElectroService {
   Iterable<ElectroModel> getAllElectro();
   
-  Iterable<ElectroPrecioJoin> getJoin();
+  Iterable<ElectroPrecioJoin> getJoin(String usuario);
 }

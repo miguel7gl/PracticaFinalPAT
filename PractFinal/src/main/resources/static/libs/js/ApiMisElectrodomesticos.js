@@ -1,17 +1,18 @@
 //Boton Buscar
 let buttonActual= document.getElementById('submitActual');
 
-// const getTodosElectrodomesticos = async () => {
-//     let url = 'http://localhost:8080/api/v1/electroPrecioJoin';
+const getMisElectrodomesticos = async () => {
+    let url = 'http://localhost:8080/api/v1/datos';
 
-//     fetch(url , {
-//         method:'GET', 
-//     })
-//     .then(response => response.json())
-//     .then(data => {
-//         console.log(data);
-//     })
-// }
+    fetch(url , {
+        method:'GET', 
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        console.log(data.name);
+    })
+}
 
 
 buttonActual.addEventListener('click', function(name){

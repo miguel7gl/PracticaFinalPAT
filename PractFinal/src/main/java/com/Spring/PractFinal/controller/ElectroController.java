@@ -25,9 +25,9 @@ public class ElectroController {
     }
 
     @GetMapping(path="/electroPrecioJoin",produces=MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Iterable<ElectroPrecioJoin>> getJoin(@RequestParam(required = false) String usuario) {
+    public ResponseEntity<Iterable<ElectroPrecioJoin>> getJoin() {
 
-        var orders = electroService.getJoin(usuario);
+        var orders = electroService.getJoin();
         return ResponseEntity.ok().body(orders);
     }
     

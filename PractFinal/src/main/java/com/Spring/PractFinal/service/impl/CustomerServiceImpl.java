@@ -29,7 +29,7 @@ public class CustomerServiceImpl implements CustomerService{
 
   @Override 
   public Iterable<CustomerModel> getAllCustomers(){
-      return repository.findAll();
+    return repository.findAll();
   }
 
   @Override//METODO PARA EL GET INNER JOIN

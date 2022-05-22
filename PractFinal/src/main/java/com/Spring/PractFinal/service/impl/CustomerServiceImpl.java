@@ -21,7 +21,6 @@ import com.Spring.PractFinal.join.CustomerElectroJoin;
 import com.Spring.PractFinal.model.CustomerModel;
 import com.Spring.PractFinal.repository.CustomerRepository;
 
-
 @Service
 public class CustomerServiceImpl implements CustomerService{
   @Autowired
@@ -32,7 +31,7 @@ public class CustomerServiceImpl implements CustomerService{
     
   @Override 
   public Iterable<CustomerModel> getAllCustomers(){
-      return repository.findAll();
+    return repository.findAll();
   }
 
   @Override//METODO PARA EL GET INNER JOIN

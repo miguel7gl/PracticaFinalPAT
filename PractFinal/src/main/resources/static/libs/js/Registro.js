@@ -7,12 +7,13 @@ const postCustomer=async()=>{
   let numPiso=document.getElementById('numPiso').value
   let ciudad=document.getElementById('ciudad').value
   let provincia=document.getElementById('provincia').value
-  let codigoPostal=document.getElementById('codigoPostal').value
+  let codigoPostal=document.getElementById('codigopostal').value
   let pais=document.getElementById('pais').value
 
-
+ //console.log(id);
  console.log(customerName);
  console.log(password);
+
  console.log(calle);
  console.log(numPiso);
  console.log(ciudad);
@@ -40,17 +41,18 @@ const postCustomer=async()=>{
    headers:{
      'Content-Type':"application/json"
    },
-   body:JSON.stringify(data),
+   body:JSON.stringify({
+     customerName: nombre,
+     country: pais
+   }),
    dataType:"json"
  }).catch(e=>
    console.log(e));
  
  if (request2.status===200){
-
-   console.log(data);
-   
+   console.log("EXITO :)")
  }
-
+ 
 }
 
 let elementBoton3=document.getElementById('post');

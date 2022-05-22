@@ -14,7 +14,7 @@ public class CustomerDomicilioJoin {
   public CustomerDomicilioJoin() {
   }
 
-  public CustomerDomicilioJoin(Long customerid, String calle, String numPiso, String provincia, String ciudad, Integer codigoPostal, String pais) {
+  public CustomerDomicilioJoin(Long customerid,String calle, String numPiso, String provincia, String ciudad, Integer codigoPostal, String pais) {
     this.customerid = customerid;
     this.calle = calle;
     this.numPiso = numPiso;

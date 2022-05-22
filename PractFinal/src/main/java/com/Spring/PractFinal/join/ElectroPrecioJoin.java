@@ -10,10 +10,8 @@ public class ElectroPrecioJoin {
   private Integer consumo;
   private Float precioConsumo;
 
-  public ElectroPrecioJoin() {
-  }
-
-  public ElectroPrecioJoin(Long electroId, String electroTipo, Long customerId, Integer tiempoUso, Integer consumo, Float precioConsumo) {
+  public ElectroPrecioJoin(Long electroId, String electroTipo, Long customerId,
+      Integer tiempoUso, Integer consumo, Float precioConsumo) {
     this.electroId = electroId;
     this.electroTipo = electroTipo;
     this.customerId = customerId;
@@ -21,6 +19,11 @@ public class ElectroPrecioJoin {
     this.consumo = consumo;
     this.precioConsumo = precioConsumo;
   }
+
+  public ElectroPrecioJoin() {
+  }
+
+
 
   public Long getElectroId() {
     return this.electroId;
@@ -126,6 +129,5 @@ public class ElectroPrecioJoin {
       ", consumo='" + getConsumo() + "'" +
       ", precioConsumo='" + getPrecioConsumo() + "'" +
       "}";
-  }
-  
+  }  
 }

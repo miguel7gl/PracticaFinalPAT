@@ -48,23 +48,23 @@
                         <div class="col-md-6 mb-4 pb-2">
     
                           <div class="form-outline">
-                            <input type="text" id="form3Examplev2" class="form-control form-control-lg" placeholder="C/ Mayor" required />
-                            <label class="form-label" for="form3Examplev2"  >Calle</label>
+                            <input type="text" id="calle" class="form-control form-control-lg" placeholder="C/ Mayor" required />
+                            <label class="form-label" for="calle"  >Calle</label>
                           </div>
     
                         </div>
                         <div class="col-md-6 mb-4 pb-2">
     
                           <div class="form-outline">
-                            <input type="text" id="form3Examplev3" class="form-control form-control-lg" placeholder="82 1ºB" required/>
-                            <label class="form-label" for="form3Examplev3">Número y piso</label>
+                            <input type="text" id="numPiso" class="form-control form-control-lg" placeholder="82 1ºB" required/>
+                            <label class="form-label" for="numPiso">Número y piso</label>
                           </div>
     
                         </div>
                       </div>
     
                       <div class="mb-4 pb-2">
-                          <select class="form-select" aria-label="Default select example">
+                          <select class="form-select" aria-label="Default select example" id="provincia">
                               <option selected>Madrid</option>
                               <option>Málaga</option>
                               <option>Segovia</option>
@@ -75,13 +75,13 @@
                               <option>Huesca</option>
                               <option>Almería</option>
                             </select>
-                            <label class="form-label" for="form3Examplev3">Provincia</label>
+                            <label class="form-label" for="provincia">Provincia</label>
                       </div>
     
                       <div class="mb-4 pb-2">
                         <div class="form-outline">
-                          <input type="text" id="form3Examplev4" class="form-control form-control-lg" required/>
-                          <label class="form-label" for="form3Examplev4">Ciudad</label>
+                          <input type="text" id="ciudad" class="form-control form-control-lg" required/>
+                          <label class="form-label" for="ciudad">Ciudad</label>
                         </div>
                       </div>
     
@@ -89,20 +89,23 @@
                         <div class="col-md-6 mb-4 pb-2 mb-md-0 pb-md-0">
     
                           <div class="form-outline">
-                            <input type="text" id="form3Examplev5" class="form-control form-control-lg" required/>
-                            <label class="form-label" for="form3Examplev5">Código postal</label>
+                            <input type="text" id="codigoPostal" class="form-control form-control-lg" required/>
+                            <label class="form-label" for="codigoPostal">Código postal</label>
                           </div>
     
                         </div>
                         <div class="col-md-6">
     
-                          <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                          <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="pais">
                               <option selected>España</option>
+
+                             <!---                
                               <option value="1">Alemania</option>
                               <option value="2">Reino Unido</option>
                               <option value="3">Noruega</option>
                               <option value="4">Italia</option>
                               <option value="5">Portugal</option>
+                              --->
                             </select>
     
                         </div>
@@ -113,47 +116,25 @@
                   <div class="col-lg-6 bg-indigo text-white">
                     <div class="p-5">
                       <h3 class="fw-normal mb-5">Información personal</h3>
-    
+
                       <div class="mb-4 pb-2">
                         <div class="form-outline form-white">
-                          <input type="email" id="form3Examplea2" class="form-control form-control-lg" placeholder="email@ejemplo.com" required/>
-                          <label class="form-label" for="form3Examplea2">Email</label>
+                          <input type="text" id="customerName" class="form-control form-control-lg" required/>
+                          <label class="form-label" for="customerName">Nombre de usuario </label>
                         </div>
                       </div>
-    
+                     
                       <div class="row">
-                        <div class="col-md-5 mb-4 pb-2">
+                        <div class="mb-4 pb-2">
     
                           <div class="form-outline form-white">
-                            <input type="password" id="form3Examplea4" class="form-control form-control-lg" required/>
-                            <label class="form-label" for="form3Examplea4">Constraseña</label>
-                          </div>
-    
-                        </div>
-                        <div class="col-md-7 mb-4 pb-2">
-    
-                          <div class="form-outline form-white">
-                            <input type="password" id="form3Examplea5" class="form-control form-control-lg" required/>
-                            <label class="form-label" for="form3Examplea5">Repetir constraseña</label>
+                            <input type="password" id="password" class="form-control form-control-lg" required/>
+                            <label class="form-label" for="password">Constraseña</label>
                           </div>
     
                         </div>
                       </div>
-    
-                      <div class="mb-4 pb-2">
-                        <div class="form-outline form-white">
-                          <input type="text" id="form3Examplea6" class="form-control form-control-lg" required/>
-                          <label class="form-label" for="form3Examplea6">Nombre y apellidos</label>
-                        </div>
-                      </div>
-    
-                      <div class="mb-4">
-                        <div class="form-outline form-white">
-                          <input type="text" id="form3Examplea9" class="form-control form-control-lg" required/>
-                          <label class="form-label" for="form3Examplea9">Nombre de usuario</label>
-                        </div>
-                      </div>
-    
+        
                       <div class="form-check d-flex justify-content-start mb-4 pb-3">
                         <input
                           class="form-check-input me-3"

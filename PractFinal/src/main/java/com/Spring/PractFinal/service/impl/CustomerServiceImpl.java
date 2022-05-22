@@ -18,7 +18,6 @@ import com.Spring.PractFinal.join.CustomerElectroJoin;
 import com.Spring.PractFinal.model.CustomerModel;
 import com.Spring.PractFinal.repository.CustomerRepository;
 
-
 @Service
 public class CustomerServiceImpl implements CustomerService{
   @Autowired

@@ -1,11 +1,13 @@
 package com.Spring.PractFinal.controller;
 
 
+import com.Spring.PractFinal.config.SecurityConfig;
 import com.Spring.PractFinal.join.CustomerDomicilioJoin;
 import com.Spring.PractFinal.join.CustomerElectroJoin;
 import com.Spring.PractFinal.join.Registro;
 import com.Spring.PractFinal.model.CustomerModel;
 import com.Spring.PractFinal.model.DomicilioModel;
+import com.Spring.PractFinal.repository.CustomerRepository;
 import com.Spring.PractFinal.service.CustomerService;
 import com.Spring.PractFinal.service.DomicilioService;
 
@@ -15,7 +17,12 @@ import org.springframework.http.MediaType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jdbc.repository.query.Modifying;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.crypto.factory.PasswordEncoderFactories;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -27,6 +34,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/v1")
 public class CustomerController {
+ @Autowired
+ SecurityConfig config;
+ @Autowired
+ AuthenticationManagerBuilder auth;
+
   @Autowired
   private CustomerService customerService;
   
@@ -54,13 +66,17 @@ public ResponseEntity<Iterable<CustomerDomicilioJoin>> getCustomerDomicilioJoin(
   return ResponseEntity.ok().body(orders);
 }
 
+
+
 @PostMapping(path="/customers-post")
-public ResponseEntity<Object> create(@RequestBody Registro usuario){
+public ResponseEntity<CustomerModel> create(@RequestBody Registro usuario) throws Exception{
+
     CustomerModel usuarioNuevo=new CustomerModel(null,usuario.getCustomerName(),usuario.getPassword());
-    DomicilioModel domicilioNuevo=new DomicilioModel(null,usuario.getCalle(),usuario.getNumPiso(),usuario.getProvincia(),usuario.getCiudad(),usuario.getCodigopostal(),usuario.getPais());
+    DomicilioModel domicilioNuevo=new DomicilioModel(null,usuario.getCalle(),usuario.getNumPiso(),usuario.getProvincia(),usuario.getCiudad(),usuario.getCodigoPostal(),usuario.getPais());
     CustomerModel customer=customerService.postCustomer(usuarioNuevo);
     DomicilioModel domicilio=domicilioService.postDomicilio(domicilioNuevo);
-    return ResponseEntity.ok().body(usuario);
+
+    return ResponseEntity.ok().body(customer);
   }
 
 @Modifying
@@ -81,6 +97,11 @@ public String delete(@RequestBody CustomerModel usuario){
 public ResponseEntity<Authentication> helloWorld(Authentication authentication) {
   return new ResponseEntity<>(authentication, HttpStatus.OK);
 }
+
+
+
+
+
 
 }
 

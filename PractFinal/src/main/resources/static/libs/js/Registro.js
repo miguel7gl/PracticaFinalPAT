@@ -7,21 +7,21 @@ const postCustomer=async()=>{
   let numPiso=document.getElementById('numPiso').value
   let ciudad=document.getElementById('ciudad').value
   let provincia=document.getElementById('provincia').value
-  let codigoPostal=document.getElementById('codigopostal').value
+  let codigoPostal=document.getElementById('codigoPostal').value
   let pais=document.getElementById('pais').value
 
 
  console.log(customerName);
  console.log(password);
-
  console.log(calle);
  console.log(numPiso);
  console.log(ciudad);
  console.log(provincia);
  console.log(codigoPostal);
  console.log(pais);
+
  var data={
-   customerName: nombre,
+   customerName: customerName,
    password: password,
    calle:calle,
    numPiso:numPiso,
@@ -46,10 +46,11 @@ const postCustomer=async()=>{
    console.log(e));
  
  if (request2.status===200){
-   window.location.replace("/login.html");
+
    console.log(data);
+   
  }
- 
+
 }
 
 let elementBoton3=document.getElementById('post');

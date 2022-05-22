@@ -8,5 +8,5 @@ import org.springframework.data.repository.CrudRepository;
 
 
 public interface DomicilioRepository extends CrudRepository<DomicilioModel,Long>{
-  public DomicilioModel findByCustomerName(String customerName);
+  
 }

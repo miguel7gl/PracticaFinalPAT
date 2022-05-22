@@ -1,6 +1,7 @@
 package com.Spring.PractFinal.controller;
 
 
+import com.Spring.PractFinal.join.CustomerDomicilioJoin;
 import com.Spring.PractFinal.join.CustomerElectroJoin;
 import com.Spring.PractFinal.model.CustomerModel;
 import com.Spring.PractFinal.service.CustomerService;
@@ -11,6 +12,7 @@ import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jdbc.repository.query.Modifying;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,26 +32,24 @@ public class CustomerController {
 
     var orders = customerService.getAllCustomers();
     return ResponseEntity.ok().body(orders);
-  }
+}
 
-  @GetMapping(path="/customerElectroJoin",produces=MediaType.APPLICATION_JSON_VALUE)
-  public ResponseEntity<Iterable<CustomerElectroJoin>> getJoin() {
+@GetMapping(path="/ElectroJoin",produces=MediaType.APPLICATION_JSON_VALUE)
+public ResponseEntity<Iterable<CustomerElectroJoin>> getCustomerElectroJoin() {
 
-    var orders = customerService.getJoin();
-    return ResponseEntity.ok().body(orders);
-  }
+  var orders = customerService.getCustomerElectroJoin();
+  return ResponseEntity.ok().body(orders);
+}
 
-  @Modifying
-  @PostMapping(path="/customers")
-  public ResponseEntity<CustomerModel> create(@RequestBody CustomerModel usuario){
+@GetMapping(path="/DomicilioJoin",produces=MediaType.APPLICATION_JSON_VALUE)
+public ResponseEntity<Iterable<CustomerDomicilioJoin>> getCustomerDomicilioJoin() {
 
-    CustomerModel customer=customerService.postCustomer(usuario);
-    return ResponseEntity.ok().body(customer);
-  }
+  var orders = customerService.getCustomerDomicilioJoin();
+  return ResponseEntity.ok().body(orders);
+}
 
-  @Modifying
-  @PutMapping(path="/customers")
-  public ResponseEntity<CustomerModel> update(@RequestBody CustomerModel usuario){
+@PostMapping(path="/customers")
+public ResponseEntity<CustomerModel> create(@RequestBody CustomerModel usuario){
 
     CustomerModel customer=customerService.updateCustomer(usuario);
     return ResponseEntity.ok().body(customer);

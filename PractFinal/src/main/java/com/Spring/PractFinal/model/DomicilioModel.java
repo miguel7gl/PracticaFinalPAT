@@ -16,7 +16,7 @@ public class DomicilioModel {
   private @Column("CUSTOMER_ID") @Id Long customerId;
 	private @Column("CALLE") String calle;
 	private @Column("NUM_PISO") String numPiso;
-  private @Column("PROVINCIA") String tiempoUso;
+  private @Column("PROVINCIA") String provincia;
   private @Column("CIUDAD") String ciudad;
   private @Column("CODIGO_POSTAL") Integer codigoPostal;
   private @Column("PAIS") String pais;

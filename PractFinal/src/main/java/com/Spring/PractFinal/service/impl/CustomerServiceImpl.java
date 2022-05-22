@@ -2,12 +2,14 @@ package com.Spring.PractFinal.service.impl;
 
 import com.Spring.PractFinal.service.CustomerService;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -27,7 +29,7 @@ public class CustomerServiceImpl implements CustomerService{
 
   @Autowired
   private CustomerRepository repository;
-
+    
   @Override 
   public Iterable<CustomerModel> getAllCustomers(){
       return repository.findAll();
@@ -65,8 +67,13 @@ public class CustomerServiceImpl implements CustomerService{
 
   @Override 
   public CustomerModel postCustomer(CustomerModel customer){ //METODO PARA EL POST
+    CustomerModel customerModel = new CustomerModel();
+    BeanUtils.copyProperties(customer, customerModel);
+    
+
      return repository.save(customer);
   }
+
   @Override 
   public CustomerModel updateCustomer(CustomerModel customer){ //METODO PARA EL POST
      return repository.save(customer);

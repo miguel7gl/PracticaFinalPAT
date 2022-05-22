@@ -3,8 +3,11 @@ package com.Spring.PractFinal.controller;
 
 import com.Spring.PractFinal.join.CustomerDomicilioJoin;
 import com.Spring.PractFinal.join.CustomerElectroJoin;
+import com.Spring.PractFinal.join.Registro;
 import com.Spring.PractFinal.model.CustomerModel;
+import com.Spring.PractFinal.model.DomicilioModel;
 import com.Spring.PractFinal.service.CustomerService;
+import com.Spring.PractFinal.service.DomicilioService;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -27,6 +30,9 @@ public class CustomerController {
   @Autowired
   private CustomerService customerService;
   
+  @Autowired
+  private DomicilioService domicilioService;
+  
   @GetMapping(path="/customers",produces= MediaType.APPLICATION_JSON_VALUE)
   public ResponseEntity<Iterable<CustomerModel>> getAllCustomers() {
 
@@ -48,12 +54,14 @@ public ResponseEntity<Iterable<CustomerDomicilioJoin>> getCustomerDomicilioJoin(
   return ResponseEntity.ok().body(orders);
 }
 
-@PostMapping(path="/customers")
-public ResponseEntity<CustomerModel> create(@RequestBody CustomerModel usuario){
-
-  CustomerModel customer=customerService.postCustomer(usuario);
-  return ResponseEntity.ok().body(customer);
-}
+@PostMapping(path="/customers-post")
+public ResponseEntity<Object> create(@RequestBody Registro usuario){
+    CustomerModel usuarioNuevo=new CustomerModel(null,usuario.getCustomerName(),usuario.getPassword());
+    DomicilioModel domicilioNuevo=new DomicilioModel(null,usuario.getCalle(),usuario.getNumPiso(),usuario.getProvincia(),usuario.getCiudad(),usuario.getCodigopostal(),usuario.getPais());
+    CustomerModel customer=customerService.postCustomer(usuarioNuevo);
+    DomicilioModel domicilio=domicilioService.postDomicilio(domicilioNuevo);
+    return ResponseEntity.ok().body(usuario);
+  }
 
 @Modifying
 @PutMapping(path="/customers")

@@ -7,4 +7,6 @@ public interface ElectroService {
   Iterable<ElectroModel> getAllElectro();
   
   Iterable<ElectroPrecioJoin> getJoin();
+
+  ElectroModel postElectro(ElectroModel electrodomestico);
 }

@@ -79,9 +79,9 @@ public class CustomerServiceImpl implements CustomerService{
   public CustomerModel postCustomer(CustomerModel customer){ //METODO PARA EL POST
     //CustomerModel customerModel = new CustomerModel();
     //BeanUtils.copyProperties(customer, customerModel);
-    
 
-     return repository.postCustomer(customer.getCustomerName(),customer.getPassword());
+     //return repository.postCustomer("Anuel","1234");
+     return repository.save(customer);
   }
 
   @Override 

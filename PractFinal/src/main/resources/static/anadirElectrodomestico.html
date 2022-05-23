@@ -34,16 +34,18 @@
 
         <ul class="list-unstyled components">
             <li>
-              <a href="inicio.html">
+              <a href="index.html">
                 <i class="fas fa-home"></i>
                 Inicio
               </a>
             </li>
             <li>
-              <a href="#conocenosSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                <i class="fas fa-copy"></i>
-                Conócenos
+              <a href="miPerfil.html">
+                <i class="fas fa-user"></i>
+                Mi Perfil
               </a>
+            </li>
+            <li>
               <ul class="collapse list-unstyled" id="conocenosSubmenu">
                   <li>
                       <a href="sobreNosotros.html">
@@ -56,12 +58,12 @@
                     Consulta de datos
                 </a>
                 <ul class="collapse list-unstyled" id="consultaSubmenu">
-                  <li class="active">
+                  
                     <a href="precioDia.html">
                       <i class="fas fa-image"></i>
                       PVPC Diario
                     </a>
-                  </li>
+                  
                   <a href="precioIntervalo.html">
                     <i class="fas fa-image"></i>
                     PVPC varios días
@@ -73,6 +75,16 @@
                   <a href="misElectrodomesticos.html">
                     <i class="fas fa-image"></i>
                     Consultar mis electrodomésticos
+                  </a>
+                  <li class="active">
+                  <a href="anadirElectrodomestico.html">
+                    <i class="fas fa-image"></i>
+                    Añadir un electrodoméstico
+                  </a>
+                  </li>
+                  <a href="calcularCoste.html">
+                    <i class="fas fa-image"></i>
+                    Consultar coste de mis electrodomesticos
                   </a>
                 </ul>
             </li>
@@ -92,54 +104,39 @@
                   <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                       <i class="fas fa-align-justify"></i>
                   </button>
-
-                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                      <ul class="nav navbar-nav ml-auto">
-                        <form class="d-flex">
-                          <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-                          <button class="btn btn-outline-warning" type="submit">Buscar</button>
-                        </form>
-                          <li class="nav-item">
-                            <button class="btn btn-outline-warning top-navbar" href="registro.html">Registrarse</button>
-                          </li>
-                          <li class="nav-item">
-                            <button class="btn btn-outline-warning top-navbar" href="#">Iniciar sesión</button>
-                          </li>
-                          <li class="nav-item">
-                            <button class="btn btn-outline-warning top-navbar" href="#">Mi perfil</button>
-                          </li>
-                      </ul>
-                  </div>
               </div>
           </nav>
 
-          <h2>Obtener mis electrodomésticos</h2>
+          <h2>Añadir electrodomésticos</h2>
           <br>
+
+          
+          <form>
+            <p>
+              <label for="electroTipo" class="sr-only">Tipo de electrodoméstico</label>
+              <input type="electroTipo" id="electroTipo" name="electroTipo" class="form-control" placeholder="lavavajillas, lavadora,..." required autofocus>
+            </p>
+            <p>
+              <label for="tiempoUso" class="sr-only">Tiempo de uso</label>
+              <input type="tiempoUso" id="tiempoUso" name="tiempoUso" class="form-control" placeholder="10 (en minutos)" required>
+            </p>
+            <p>
+              <label for="consumoMediaHora" class="sr-only">Consumo en media hora</label>
+              <input type="consumoMediaHora" id="consumoMediaHora" name="consumoMediaHora" class="form-control" placeholder="10(en KWh)" required>
+            </p>
+            <p>
+              <label for="marca" class="sr-only">Marca</label>
+              <input type="marca" id="marca" name="marca" class="form-control" placeholder="Siemens" required>
+            </p>
+            <p>
+              <label for="eficiencia" class="sr-only">Eficiencia</label>
+              <input type="eficiencia" id="eficiencia" name="eficiencia" class="form-control" placeholder="A" required>
+            </p>
+            
+          </form>
           <div class="d-grid gap-2 col-6 mx-auto botonesGrafica">
-            <input type="submit" value="Buscar" class="btn btn-secondary" id="submitActual">
+            <input type="submit" value="Añadir" class="btn btn-secondary" id="submitActual">
           </div>
-
-          <div class="line"></div>
-
-          <h3>Tabla de datos</h3>
-
-          <div class="table-responsive tablaDatos">
-            <table class="table table-striped table-sm table-fixed" id="tabla">
-              <thead>
-                <tr>
-                  <th>Id del electrodoméstico</th>
-                  <th>Tipo</th>
-                  <th>Id del usuario</th>
-                  <th>Tiempo de uso [hrs]</th>
-                  <th>Consumo [kWh]</th>
-                  <th>Precio [c€/kWh]</th>
-                </tr>
-              </thead>
-              <tbody id="datos">
-              </tbody>
-            </table>
-          </div>
-
       </div>
     </div>
 
@@ -172,8 +169,8 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-    <script src="../../assets/js/vendor/popper.min.js"></script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!--<script src="../../assets/js/vendor/popper.min.js"></script>-->
+    <!--<script src="../../dist/js/bootstrap.min.js"></script>-->
 
     <!-- Iconos -->
     <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
@@ -182,7 +179,7 @@
     </script>
 
     <!-- Scripts nuestros -->
-    <script src="./libs/js/ApiMisElectrodomesticos.js"></script>
+    <script src="./libs/js/ApiAnadirElectrodomestico.js"></script>
     <script src="./libs/js/bootstrap.js"></script>
     <script src="./libs/js/jquery.js"></script>
 

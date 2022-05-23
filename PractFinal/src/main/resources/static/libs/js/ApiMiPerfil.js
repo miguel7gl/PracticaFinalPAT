@@ -4,7 +4,7 @@ let buttonActual= document.getElementById('submitActual');
 
 //VER EL USUARIO LOGGEADO
 
-/*
+
 
 let url = 'http://localhost:8080/api/v1/datos';
 
@@ -31,11 +31,9 @@ let url = 'http://localhost:8080/api/v1/datos';
           for(i=0; i<data3.length; i++){
             if(data3[i].customerName == data.name){
               //idActual=data3[i].customerId;
-              document.getElementById('id').innerHTML = data3[i].customerId; 
-              document.getElementById('nombre').innerHTML = data3[i].customerName; 
-              document.getElementById('password').innerHTML = data3[i].password; 
+              
               console.log(data3[i]);
-              body += `<tr><td>${data3[i].customerId}</td><td>${data3[i].customerName}</td><td>${(data3[i].password)}</td></tr>`;
+              body += `<tr><td>${data3[i].customerName}</td><td>${(data3[i].password)}</td></tr>`;
               document.getElementById('datos').innerHTML = body;
             }
         }         
@@ -44,7 +42,7 @@ let url = 'http://localhost:8080/api/v1/datos';
 })
 
 
-*/
+/*
 
 
 
@@ -82,4 +80,4 @@ let url = 'http://localhost:8080/api/v1/datos';
 
 
 
-
+*/

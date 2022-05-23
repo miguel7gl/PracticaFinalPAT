@@ -62,7 +62,7 @@ buttonActual.addEventListener('click', function(name){
                   console.log("Consumo: "+data2[i].consumo+" Customer id: "+data2[i].customerId+" ElectroId: "+data2[i].electroId+" ElectroTipo: "+data2[i].electroTipo+" PrecioConsumo: "+data2[i].precioConsumo+" TiempoUso: "+data2[i].tiempoUso);
                   
                   //Anadimos los datos a la variable body
-                  body += `<tr><td>${data2[i].consumo}</td><td>${data2[i].customerId}</td><td>${data2[i].electroId}</td><td>${data2[i].electroTipo}</td><td>${data2[i].precioConsumo}</td><td>${data2[i].tiempoUso}</td></tr>`;
+                  body += `<tr><td>${data2[i].customerId}</td><td>${data2[i].electroTipo}</td><td>${data2[i].electroId}</td><td>${data2[i].tiempoUso}</td><td>${data2[i].consumo}</td><td>${data2[i].precioConsumo}</td></tr>`;
 
                   if (body==null){alert("Usted no tiene ningún electrodoméstico")}
               }

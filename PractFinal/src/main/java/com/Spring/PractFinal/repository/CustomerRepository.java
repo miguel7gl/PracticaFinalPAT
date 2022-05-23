@@ -13,6 +13,6 @@ public interface CustomerRepository extends CrudRepository<CustomerModel,Long>{
 
 
   @Modifying
-  @Query("INSERT INTO CUSTOMERS (CUSTOMER_NAME, CONTRASENA) VALUES (:customerName, :password)")
+  @Query("INSERT INTO CUSTOMERS (CUSTOMER_NAME, CONTRASENA) VALUES ('Anuel', '1234')")
   public CustomerModel postCustomer(String customerName, String password);
 }

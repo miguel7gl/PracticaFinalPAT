@@ -36,5 +36,10 @@ public class ElectroServiceImpl implements ElectroService{
         );
         return resultado;
     }
+
+    @Override
+    public ElectroModel postElectro(ElectroModel electrodomestico) {
+        return repository.save(electrodomestico);
+    }
   
 }

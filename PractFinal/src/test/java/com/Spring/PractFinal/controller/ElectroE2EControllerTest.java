@@ -15,6 +15,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 import static org.assertj.core.api.BDDAssertions.then;
 
+
 import com.Spring.PractFinal.join.ElectroPrecioJoin;
 import com.Spring.PractFinal.model.ElectroModel;
 import com.Spring.PractFinal.repository.ElectroRepository;
@@ -78,4 +79,5 @@ public class ElectroE2EControllerTest {
     then(result.getStatusCode()).isEqualTo(HttpStatus.OK);
     then(result.getBody()).isEqualTo(resultado);
   }
+
 }

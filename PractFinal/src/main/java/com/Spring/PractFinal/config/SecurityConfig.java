@@ -8,17 +8,11 @@ import com.Spring.PractFinal.repository.CustomerRepository;
 import com.Spring.PractFinal.service.CustomerService;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
-import org.springframework.security.crypto.password.DelegatingPasswordEncoder;
-import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 
@@ -46,7 +40,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	}
 
 	@Override
-  protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+  public void configure(AuthenticationManagerBuilder auth) throws Exception {
 	 PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
    Iterable<CustomerModel> listaUsuarios=repository.findAll();
 
@@ -56,9 +50,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
       .password(encoder.encode(i.getPassword()))
       .roles("CUSTOMER"); 
       }
+      
    }
 
-}
+  }
 
 
 

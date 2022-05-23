@@ -66,10 +66,6 @@ public class CustomerServiceImpl implements CustomerService{
 
   @Override 
   public CustomerModel postCustomer(CustomerModel customer){ //METODO PARA EL POST
-    CustomerModel customerModel = new CustomerModel();
-    BeanUtils.copyProperties(customer, customerModel);
-    
-
      return repository.save(customer);
   }
 

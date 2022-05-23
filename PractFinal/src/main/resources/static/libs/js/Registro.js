@@ -7,7 +7,7 @@ const postCustomer=async()=>{
   let numPiso=document.getElementById('numPiso').value
   let ciudad=document.getElementById('ciudad').value
   let provincia=document.getElementById('provincia').value
-  let codigoPostal=document.getElementById('codigopostal').value
+  let codigoPostal=document.getElementById('codigoPostal').value
   let pais=document.getElementById('pais').value
 
  //console.log(id);
@@ -41,10 +41,8 @@ const postCustomer=async()=>{
    headers:{
      'Content-Type':"application/json"
    },
-   body:JSON.stringify({
-     customerName: nombre,
-     country: pais
-   }),
+   body:JSON.stringify(data
+   ),
    dataType:"json"
  }).catch(e=>
    console.log(e));

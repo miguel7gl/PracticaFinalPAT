@@ -10,20 +10,20 @@ public class Registro {
   private String  numPiso;
   private String  ciudad;
   private String  provincia;
-  private Integer codigopostal;
+  private Integer codigoPostal;
   private String  pais;
 
   public Registro() {
   }
 
-  public Registro(String customerName, String password, String calle, String numPiso, String ciudad, String provincia, Integer codigopostal, String pais) {
+  public Registro(String customerName, String password, String calle, String numPiso, String ciudad, String provincia, Integer codigoPostal, String pais) {
     this.customerName = customerName;
     this.password = password;
     this.calle = calle;
     this.numPiso = numPiso;
     this.ciudad = ciudad;
     this.provincia = provincia;
-    this.codigopostal = codigopostal;
+    this.codigoPostal = codigoPostal;
     this.pais = pais;
   }
 
@@ -75,12 +75,12 @@ public class Registro {
     this.provincia = provincia;
   }
 
-  public Integer getCodigopostal() {
-    return this.codigopostal;
+  public Integer getCodigoPostal() {
+    return this.codigoPostal;
   }
 
-  public void setCodigopostal(Integer codigopostal) {
-    this.codigopostal = codigopostal;
+  public void setCodigoPostal(Integer codigoPostal) {
+    this.codigoPostal = codigoPostal;
   }
 
   public String getPais() {
@@ -121,8 +121,8 @@ public class Registro {
     return this;
   }
 
-  public Registro codigopostal(Integer codigopostal) {
-    setCodigopostal(codigopostal);
+  public Registro codigoPostal(Integer codigoPostal) {
+    setCodigoPostal(codigoPostal);
     return this;
   }
 
@@ -139,12 +139,12 @@ public class Registro {
             return false;
         }
         Registro registro = (Registro) o;
-        return Objects.equals(customerName, registro.customerName) && Objects.equals(password, registro.password) && Objects.equals(calle, registro.calle) && Objects.equals(numPiso, registro.numPiso) && Objects.equals(ciudad, registro.ciudad) && Objects.equals(provincia, registro.provincia) && Objects.equals(codigopostal, registro.codigopostal) && Objects.equals(pais, registro.pais);
+        return Objects.equals(customerName, registro.customerName) && Objects.equals(password, registro.password) && Objects.equals(calle, registro.calle) && Objects.equals(numPiso, registro.numPiso) && Objects.equals(ciudad, registro.ciudad) && Objects.equals(provincia, registro.provincia) && Objects.equals(codigoPostal, registro.codigoPostal) && Objects.equals(pais, registro.pais);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(customerName, password, calle, numPiso, ciudad, provincia, codigopostal, pais);
+    return Objects.hash(customerName, password, calle, numPiso, ciudad, provincia, codigoPostal, pais);
   }
 
   @Override
@@ -156,7 +156,7 @@ public class Registro {
       ", numPiso='" + getNumPiso() + "'" +
       ", ciudad='" + getCiudad() + "'" +
       ", provincia='" + getProvincia() + "'" +
-      ", codigopostal='" + getCodigopostal() + "'" +
+      ", codigopostal='" + getCodigoPostal() + "'" +
       ", pais='" + getPais() + "'" +
       "}";
   }

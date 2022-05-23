@@ -1,6 +1,16 @@
 package com.Spring.PractFinal.controller;
 
 
+import java.security.AllPermission;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+import javax.servlet.http.HttpSession;
+
 import com.Spring.PractFinal.config.SecurityConfig;
 import com.Spring.PractFinal.join.CustomerDomicilioJoin;
 import com.Spring.PractFinal.join.CustomerElectroJoin;
@@ -17,9 +27,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jdbc.repository.query.Modifying;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
+import org.springframework.security.config.annotation.authentication.configurers.provisioning.InMemoryUserDetailsManagerConfigurer;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.GrantedAuthoritiesContainer;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.context.SecurityContext;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -29,6 +49,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
 
 @RestController
 @RequestMapping("/api/v1")
@@ -44,9 +65,7 @@ public class CustomerController {
   @Autowired
   private DomicilioService domicilioService;
   
-  @Autowired
-  private DomicilioService domicilioService;
-  
+
   @GetMapping(path="/customers",produces= MediaType.APPLICATION_JSON_VALUE)
   public ResponseEntity<Iterable<CustomerModel>> getAllCustomers() {
 
@@ -68,8 +87,7 @@ public ResponseEntity<Iterable<CustomerDomicilioJoin>> getCustomerDomicilioJoin(
   return ResponseEntity.ok().body(orders);
 }
 
-
-
+/*
 @PostMapping(path="/customers-post")
 public ResponseEntity<CustomerModel> create(@RequestBody Registro usuario) throws Exception{
 
@@ -80,6 +98,7 @@ public ResponseEntity<CustomerModel> create(@RequestBody Registro usuario) throw
 
     return ResponseEntity.ok().body(customer);
   }
+*/
 
   @Modifying
   @DeleteMapping(path="/customers")

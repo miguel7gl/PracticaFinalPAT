@@ -64,13 +64,24 @@ public class CustomerServiceImpl implements CustomerService{
       return resultado;
   }
 
+  /*
   @Override 
   public CustomerModel postCustomer(CustomerModel customer){ //METODO PARA EL POST
-    CustomerModel customerModel = new CustomerModel();
-    BeanUtils.copyProperties(customer, customerModel);
+    //CustomerModel customerModel = new CustomerModel();
+    //BeanUtils.copyProperties(customer, customerModel);
     
 
      return repository.save(customer);
+  }
+  */
+
+  @Override 
+  public CustomerModel postCustomer(CustomerModel customer){ //METODO PARA EL POST
+    //CustomerModel customerModel = new CustomerModel();
+    //BeanUtils.copyProperties(customer, customerModel);
+    
+
+     return repository.postCustomer(customer.getCustomerName(),customer.getPassword());
   }
 
   @Override 

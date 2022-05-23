@@ -16,7 +16,7 @@ let url = 'http://localhost:8080/api/v1/datos';
         console.log(data);
         console.log(data.name); //data.name es el nombre del usuario
 
-        const url2 = 'http://localhost:8080/api/v1/customers';
+        const url2 = 'http://localhost:8080/api/v1/DomicilioJoin';
 
         fetch(url2 , {
           method:'GET', 
@@ -25,15 +25,14 @@ let url = 'http://localhost:8080/api/v1/datos';
         .then(data3 => {
           console.log(data3);
 
-          console.log(data3[2].customerId);
+          //console.log(data3[i].customerName);
+          console.log(data3[2].calle);
           let body = '';
 
           for(i=0; i<data3.length; i++){
-            if(data3[i].customerName == data.name){
-              //idActual=data3[i].customerId;
+            if(data3[i].calle == data.name){
               
-              console.log(data3[i]);
-              body += `<tr><td>${data3[i].customerName}</td><td>${(data3[i].password)}</td></tr>`;
+              body += `<tr><td>${data3[i].calle}</td><td>${data3[i].pais}</td><td>${(data3[i].ciudad)}</td><td>${(data3[i].numPiso)}</td><td>${(data3[i].provincia)}</td><td>${data3[i].codigoPostal}</td></tr>`;
               document.getElementById('datos').innerHTML = body;
             }
         }         

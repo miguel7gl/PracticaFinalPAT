@@ -67,8 +67,8 @@ public ResponseEntity<Iterable<CustomerDomicilioJoin>> getCustomerDomicilioJoin(
 }
 
 
-@PostMapping(path="/customers-post")
-public ResponseEntity<CustomerModel> create(@RequestBody CustomerModel usuario){
+  @PostMapping(path="/customers-post")
+  public ResponseEntity<CustomerModel> create(@RequestBody CustomerModel usuario){
     customerService.postCustomer(usuario);
     return ResponseEntity.ok().body(usuario);
   }
